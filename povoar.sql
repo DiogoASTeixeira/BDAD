@@ -15,3 +15,7 @@ INSERT INTO game VALUES (2, 'The Witcher 3', 30.0, 95.0, 3, 3);
 INSERT INTO game VALUES (3, 'Bioshock', 22.2, 89.3, 1, 1);
 INSERT INTO game VALUES (4, 'Tales From The Borderlands', 18.5, 73.5, 4, 1);
 
+INSERT INTO achievement VALUES (1, 'Shoot me in the face!', 'You shot Shooty McFace in the knee and chest before shooting him in the face.', 1);
+INSERT INTO achievement VALUES (2, 'Finger gun fighting', 'Congratulations, you won the finger gun fight!', 4);
+INSERT INTO achievement VALUES (3, 'Big Daddy', 'You defetead your first Big Daddy', 3);
+INSERT INTO achievement Values (4, 'Broken Bed', 'You made the decision that lead Yennefer to destroy the bed', 2);
