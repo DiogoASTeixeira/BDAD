@@ -4,11 +4,11 @@ DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS communities;
 DROP TABLE IF EXISTS friendship;
 DROP TABLE IF EXISTS follow_studio;
-DROP TABLE IF EXISTS wishlist;
-DROP TABLE IF EXISTS ownership;
-DROP TABLE IF EXISTS review;
 DROP TABLE IF EXISTS user_achievement;
 DROP TABLE IF EXISTS achievement;
+DROP TABLE IF EXISTS review;
+DROP TABLE IF EXISTS wishlist;
+DROP TABLE IF EXISTS ownership;
 DROP TABLE IF EXISTS game;
 DROP TABLE IF EXISTS studio;
 DROP TABLE IF EXISTS users;
@@ -37,28 +37,6 @@ CREATE TABLE game (
 	publisher_id INTEGER REFERENCES studio
 );
 
-CREATE TABLE achievement (
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(64) NOT NULL,
-    description TEXT NOT NULL,
-    game_id INTEGER REFERENCES game
-);
-
-/* CHECK KEYS */
-CREATE TABLE user_achievement (
-	user_id INTEGER REFERENCES users,
-    achievement_id INTEGER REFERENCES achievement,
-    CONSTRAINT pk_achiev PRIMARY KEY (user_id, achievement_id)
-);
-
-CREATE TABLE review (
-	user_id INTEGER REFERENCES users,
-    game_id INTEGER REFERENCES game,
-    body TEXT,
-    rating REAL NOT NULL,
-    CONSTRAINT pk_review PRIMARY KEY (user_id, game_id)
-);
-
 CREATE TABLE ownership (
 	user_id INTEGER REFERENCES users,
     game_id INTEGER REFERENCES game,
@@ -69,6 +47,28 @@ CREATE TABLE wishlist (
 	user_id INTEGER  REFERENCES users,
     game_id INTEGER  REFERENCES game,
     CONSTRAINT pk_wish PRIMARY KEY (user_id, game_id)
+);
+
+CREATE TABLE review (
+	user_id INTEGER REFERENCES users,
+    game_id INTEGER REFERENCES game,
+    body TEXT,
+    rating BOOLEAN NOT NULL,
+    CONSTRAINT pk_review PRIMARY KEY (user_id, game_id)
+);
+
+CREATE TABLE achievement (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    description TEXT NOT NULL,
+    game_id INTEGER REFERENCES game
+);
+
+/* TODO CHECK KEYS */
+CREATE TABLE user_achievement (
+	user_id INTEGER REFERENCES users,
+    achievement_id INTEGER REFERENCES achievement,
+    CONSTRAINT pk_achiev PRIMARY KEY (user_id, achievement_id)
 );
 
 CREATE TABLE follow_studio (
