@@ -56,19 +56,62 @@ INSERT INTO users_achievement VALUES (2, 4);
 INSERT INTO users_achievement VALUES (4, 3);
 
 /* follow_studio(users -> users, studio -> studio) */
-INSERT INTO follow_studio VALUES
+INSERT INTO follow_studio VALUES (6, 1);
+INSERT INTO follow_studio VALUES (6, 2);
+INSERT INTO follow_studio VALUES (1, 4);
+INSERT INTO follow_studio VALUES (2, 3);
+INSERT INTO follow_studio VALUES (2, 4);
+INSERT INTO follow_studio VALUES (3, 1);
+INSERT INTO follow_studio VALUES (3, 2);
+INSERT INTO follow_studio VALUES (3, 4);
+INSERT INTO follow_studio VALUES (5, 3);
 
 /* friendship(user1 -> users, user2 -> users CK user2 != user1) */
-INSERT INTO friendship VALUES
+INSERT INTO friendship VALUES (1, 3);
+INSERT INTO friendship VALUES (1, 5);
+INSERT INTO friendship VALUES (2, 4);
+INSERT INTO friendship VALUES (2, 6);
+INSERT INTO friendship VALUES (3, 5);
+INSERT INTO friendship VALUES (4, 6);
+INSERT INTO friendship VALUES (4, 5);
+INSERT INTO friendship VALUES (5, 6);
 
 /* communities(id, name NN) */
-INSERT INTO communities VALUES
+INSERT INTO communities VALUES (1, 'Chocolate chip cookies connoisseurs');
+INSERT INTO communities VALUES (2, 'Whip the raisin abdomination of the world');
+INSERT INTO communities VALUES (3, 'School fo the Wolf');
+INSERT INTO communities VALUES (4, 'Children of the Vault');
+INSERT INTO communities VALUES (5, 'Sorcerers');
 
 /* post(id, title NN, body NN, rating DF 50, author -> users, community -> communities) */
-INSERT INTO post VALUES
+INSERT INTO post VALUES (1, 'Torgues betrayal', 'Today the vaul hunter went to one of Mr''s Torgue ventures and I found out that he has raisin cookies! How can he be such a monster??????', 97.3, 6, 2);
+INSERT INTO post VALUES (2, 'We want you!', 'We, the witchers of the School of the Wolf, are looking for volunteers to the Trial of the Grasses. If you wish to apply, come join us in Kaer Morhen.', 56.0, 2, 3);
+INSERT INTO post VALUES (3, 'CHILDREN VAULT', 'THEY DON''T SHOOT FACE, BUT BRAINWASHHHHHHHHHHHHHHHH', 23.1, 5, 4);
 
 /* comment(id, body NN, rating DF 50, author -> users, post -> post) */
-INSERT INTO comment VALUES
+INSERT INTO comment VALUES (1, 'I can''t belive he did such thing :''('), 87.8, 1, 1);
+INSERT INTO comment VALUES (2, 'Maybe he had no such intentions, maybe it was just a mistake...', 32.7, 2, 1);
+INSERT INTO comment VALUES (3, 'There is no way in hell I''m going, the survival rates are awful', 63.4, 4, 2);
+INSERT INTO comment VALUES (4, 'SHOOT ME IN THE FACEEEEEEEEEEEE', 27.3, 5, 2);
 
-/* privileges(users -> users, community -> communities, is_administrator DF false) */
-INSERT INTO privileges VALUES
+/* privileges(users -> users, community -> communities, is_administrator DF false(0)) */
+INSERT INTO privileges VALUES (1, 1, 0);
+INSERT INTO privileges VALUES (4, 1, 0);
+INSERT INTO privileges VALUES (6, 1, 1);
+
+INSERT INTO privileges VALUES (1, 2, 0);
+INSERT INTO privileges VALUES (3, 2, 0);
+INSERT INTO privileges VALUES (4, 2, 0);
+INSERT INTO privileges VALUES (6, 2, 1);
+
+INSERT INTO privileges VALUES (1, 3, 0);
+INSERT INTO privileges VALUES (2, 3, 1);
+INSERT INTO privileges VALUES (3, 3, 0);
+INSERT INTO privileges VALUES (4, 3, 0);
+
+INSERT INTO privileges VALUES (1, 4, 0);
+INSERT INTO privileges VALUES (5, 4, 1);
+
+INSERT INTO privileges VALUES (3, 5, 0);
+INSERT INTO privileges VALUES (4, 5, 0);
+INSERT INTO privileges VALUES (6, 5, 1);
