@@ -79,7 +79,7 @@ INSERT INTO friendship VALUES (5, 6);
 /* communities(id, name NN) */
 INSERT INTO communities VALUES (1, 'Chocolate chip cookies connoisseurs');
 INSERT INTO communities VALUES (2, 'Whip the raisin abdomination of the world');
-INSERT INTO communities VALUES (3, 'School fo the Wolf');
+INSERT INTO communities VALUES (3, 'School of the Wolf');
 INSERT INTO communities VALUES (4, 'Children of the Vault');
 INSERT INTO communities VALUES (5, 'Sorcerers');
 
