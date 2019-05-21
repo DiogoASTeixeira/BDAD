@@ -15,7 +15,7 @@ $BODY$ LANGUAGE sqlite;
 CREATE TRIGGER new_administrator
 BEFORE
 INSERT ON privileges
-FOR EACH ROW EXECUTE PROCEDURE new_moderator();
+FOR EACH ROW EXECUTE PROCEDURE new_administrator();
 
 
 

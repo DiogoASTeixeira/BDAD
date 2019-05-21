@@ -64,8 +64,7 @@ CREATE TABLE achievement (
     game_id INTEGER REFERENCES game
 );
 
-/* TODO CHECK KEYS */
-CREATE TABLE user_achievement (
+CREATE TABLE users_achievement (
 	user_id INTEGER REFERENCES users,
     achievement_id INTEGER REFERENCES achievement,
     CONSTRAINT pk_achiev PRIMARY KEY (user_id, achievement_id)
@@ -80,7 +79,7 @@ CREATE TABLE follow_studio (
 CREATE TABLE friendship(
 	user1 INTEGER  REFERENCES users,
     user2 INTEGER  REFERENCES users,
-    CHECK (user1 > user2),
+    CHECK (user1 < user2),
     CONSTRAINT pk_friend PRIMARY KEY (user1, user2)
 );
 

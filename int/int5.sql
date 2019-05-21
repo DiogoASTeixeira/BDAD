@@ -2,4 +2,4 @@
 *   Update price tag on game
 */
 
-UPDATE game SET price = :new_price WHERE id = :game_id;
+UPDATE game SET price = 30 WHERE id = 3;

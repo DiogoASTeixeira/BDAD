@@ -38,8 +38,8 @@ INSERT INTO wishlist VALUES (5, 4);
 
 /* review(users -> users, game -> game, body, rating NN <1-true>) */
 INSERT INTO review VALUES (6, 1, "There were chocolate chip cookies!!!", 1);
-INSERT INTO review VALUES (6, 4, "A fine addition to the series.");
-INSERT INTO review VALUES (6, 1);
+INSERT INTO review VALUES (6, 4, "A fine addition to the series.", 1);
+INSERT INTO review VALUES (5, 1, "Meh", 2);
 
 /* achievement(id, name NN, description NN, game -> Game) */
 INSERT INTO achievement VALUES (1, 'Shoot me in the face!', 'You shot Shooty McFace in the knee and chest before shooting him in the face.', 1);
@@ -89,7 +89,7 @@ INSERT INTO post VALUES (2, 'We want you!', 'We, the witchers of the School of t
 INSERT INTO post VALUES (3, 'CHILDREN VAULT', 'THEY DON''T SHOOT FACE, BUT BRAINWASHHHHHHHHHHHHHHHH', 23.1, 5, 4);
 
 /* comment(id, body NN, rating DF 50, author -> users, post -> post) */
-INSERT INTO comment VALUES (1, 'I can''t belive he did such thing :''('), 87.8, 1, 1);
+INSERT INTO comment VALUES (1, 'I can''t belive he did such thing', 87.8, 1, 1);
 INSERT INTO comment VALUES (2, 'Maybe he had no such intentions, maybe it was just a mistake...', 32.7, 2, 1);
 INSERT INTO comment VALUES (3, 'There is no way in hell I''m going, the survival rates are awful', 63.4, 4, 2);
 INSERT INTO comment VALUES (4, 'SHOOT ME IN THE FACEEEEEEEEEEEE', 27.3, 5, 2);
