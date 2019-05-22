@@ -21,6 +21,8 @@ INSERT INTO game VALUES (4, 'Tales From The Borderlands', 18.5, 73.5, 4, 1);
 /* ownership(users -> users, game -> game) */
 INSERT INTO ownership VALUES (6, 4);
 INSERT INTO ownership VALUES (6, 1);
+INSERT INTO ownership VALUES (6, 2);
+INSERT INTO ownership VALUES (6, 3);
 INSERT INTO ownership VALUES (4, 1);
 INSERT INTO ownership VALUES (5, 1);
 INSERT INTO ownership VALUES (4, 2);
