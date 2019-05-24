@@ -1,18 +1,11 @@
 /**
-*   Check if 2 users are already friends
+*   Remove from wishlist after purchase
 */
 
-DROP TRIGGER IF EXISTS inviteFriend;
-
-CREATE TRIGGER inviteFriend
-BEFORE
-INSERT ON
-friendship
+CREATE TRIGGER IF NOT EXISTS remove_from_wishlist
+AFTER INSERT ON ownership
 BEGIN
-	SELECT RAISE(ABORT ,'Duplicate Friendship Tuple')
-	WHERE EXISTS
-		(SELECT 1
-	FROM "friendship"
-	WHERE 	("friendship".user1 = NEW.user1 AND "friendship".user2 = NEW.user2) OR
-		("friendship".user1 = NEW.user2 AND "friendship".user2 = NEW.user1));
-END
+	DELETE FROM wishlist 
+	WHERE game_id = NEW.game_id
+	AND user_id = NEW.user_id;
+END;

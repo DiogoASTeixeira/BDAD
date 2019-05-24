@@ -1,10 +1,7 @@
 /**
 *   Delete child comments when parent post is deleted
 */
-
-DROP TRIGGER IF EXISTS delete_child_comment;
-
-CREATE TRIGGER delete_child_comment
+CREATE TRIGGER IF NOT EXISTS delete_child_comment
 BEFORE
 DELETE ON post
 BEGIN

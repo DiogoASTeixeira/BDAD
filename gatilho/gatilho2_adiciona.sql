@@ -1,10 +1,7 @@
 /**
 *   User id already attributed to a administrator (table inheritance consistency)
 */
-
-DROP TRIGGER IF EXISTS new_administrator;
-
-CREATE TRIGGER new_administrator
+CREATE TRIGGER IF NOT EXISTS new_administrator
 BEFORE
 INSERT ON
 privileges

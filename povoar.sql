@@ -32,8 +32,8 @@ INSERT INTO ownership VALUES (1, 1);
 INSERT INTO ownership VALUES (1, 3);
 
 /* wishlist(users -> users, game -> game) */
-INSERT INTO wishlist VALUES (6, 3);
-INSERT INTO wishlist VALUES (6, 2);
+INSERT INTO wishlist VALUES (1, 4);
+INSERT INTO wishlist VALUES (1, 2);
 INSERT INTO wishlist VALUES (2, 2);
 INSERT INTO wishlist VALUES (3, 1);
 INSERT INTO wishlist VALUES (5, 4);
