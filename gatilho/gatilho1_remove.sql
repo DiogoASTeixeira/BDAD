@@ -1,1 +1,1 @@
-DROP TRIGGER IF EXISTS inviteFriend;
+DROP TRIGGER IF EXISTS remove_from_wishlist;
