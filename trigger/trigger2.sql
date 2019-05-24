@@ -6,10 +6,13 @@ DROP TRIGGER IF EXISTS new_administrator;
 
 CREATE TRIGGER new_administrator
 BEFORE
-INSERT ON privileges
+INSERT ON
+privileges
 BEGIN
-SELECT RAISE(ABORT, 'This user id is already the administrator')
-    WHERE EXISTS (SELECT 1 FROM privileges WHERE NEW.user_id = user_id AND NEW.community_id = community_id AND is_administrator = true);
+    SELECT RAISE(ABORT, 'This user is already the administrator')
+    WHERE EXISTS (SELECT 1
+    FROM privileges
+    WHERE NEW.user_id = user_id AND NEW.community_id = community_id AND is_administrator = true);
 END
 
 

@@ -1,13 +1,12 @@
 /**
-*   User id already attributed to a administrator (table inheritance consistency)
+*   Delete child comments when parent post is deleted
 */
 
-DROP TRIGGER IF EXISTS not_enough_money;
+DROP TRIGGER IF EXISTS delete_child_comment;
 
-CREATE TRIGGER not_enough_money
+CREATE TRIGGER delete_child_comment
 BEFORE
-UPDATE ON users
+DELETE ON post
 BEGIN
-SELECT RAISE(ABORT, 'Not enought funds.')
-    WHERE EXISTS (SELECT 1 FROM privileges WHERE NEW.user_id = user_id AND NEW.community_id = community_id AND is_administrator = true);
+    DELETE FROM comment WHERE post_id = OLD.id;
 END
