@@ -1,5 +1,5 @@
 /**
-*   User user already has that role (table inheritance consistency)
+*   User already has that role (table consistency)
 */
 CREATE TRIGGER IF NOT EXISTS new_administrator
 BEFORE
